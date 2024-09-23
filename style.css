@@ -1,0 +1,61 @@
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: sans-serif;
+  overflow: hidden;
+}
+
+button {
+  width: 160px;
+  height: 60px;
+  color: black;
+  border: 2px solid black;
+  background: none;
+  text-align: center;
+  line-height: 60px;
+  font-size: 25px;
+  position: relative;
+  transition: all 0.5s;
+}
+
+button:hover {
+  color: white;
+}
+
+button::before {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background-color: black;
+  z-index: -1;
+  opacity: 0;
+  transition: all 0.8s;
+}
+
+button:hover::before {
+  opacity: 1;
+  transform: rotate(15deg);
+}
+
+button span {
+  color: transparent;
+  position: relative;
+}
+
+button span::before {
+  content: "B";
+  position: absolute;
+  color: black;
+  transition: all 0.2s;
+}
+
+button:hover span::before {
+  color: white;
+  font-size: 80px;
+  transform: translate(-65%, -10%) rotate(360deg);
+}
